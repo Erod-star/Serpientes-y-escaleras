@@ -48,6 +48,7 @@ class Juego {
         this.j1 = new Jugador("Edson", "Rojo");
         this.j2 = new Jugador("Scarlett Johansson", "Azul");
         this.tablero = new Tablero();
+        this.ganador = null;
     }
 
     iniciarJuego() {
