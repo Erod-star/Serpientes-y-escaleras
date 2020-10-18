@@ -44,13 +44,10 @@ class Tablero {
 
 class Juego {
     constructor() {
-        this.inicio = 0;
         this.meta = 100;
         this.j1 = new Jugador("Edson", "Rojo");
         this.j2 = new Jugador("Scarlett Johansson", "Azul");
-        this.posicion = 0;
         this.tablero = new Tablero();
-        this.ganador = null;
     }
 
     iniciarJuego() {
