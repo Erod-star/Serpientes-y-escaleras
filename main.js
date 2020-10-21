@@ -52,12 +52,12 @@ class Juego {
     }
 
     iniciarJuego() {
-        let x = 0;
+        let x = 1;
         let contadorj1 = 0;
         let contadorj2 = 0;
 
-        while (x < 100) {
-            console.log('Turno #' + (x + 1));
+        while (contadorj1 < 100 && contadorj2 < 100) {
+            console.log('Turno #' + (x));
             contadorj1 += this.j1.avanzar();
             contadorj1 = this.tablero.verificarCasilla(contadorj1);
             console.log(this.j1.nombre, 'está en la casilla ' + contadorj1);
@@ -65,19 +65,17 @@ class Juego {
             contadorj2 += this.j2.avanzar();
             contadorj2 = this.tablero.verificarCasilla(contadorj2);
             console.log(this.j2.nombre, 'está en la casilla ' + contadorj2);
-            console.log('------------------------------------------')
+            console.log('------------------------------------------');
 
-            if (contadorj1 >= this.meta) {
-                this.ganador = "¡" + this.j1.nombre + " con la ficha de color " + this.j1.colorficha + " ha ganado!";
-                console.log(this.ganador);
-                break
-            } else if (contadorj2 >= this.meta) {
-                this.ganador = "¡" + this.j2.nombre + " con la ficha de color " + this.j2.colorficha + " ha ganado!";
-                console.log(this.ganador);
-                break
-            }
+            x++;
+        }
 
-            x++
+        if (contadorj1 >= this.meta) {
+            this.ganador = "¡" + this.j1.nombre + " con la ficha de color " + this.j1.colorficha + " ha ganado!";
+            console.log(this.ganador);
+        } else if (contadorj2 >= this.meta) {
+            this.ganador = "¡" + this.j2.nombre + " con la ficha de color " + this.j2.colorficha + " ha ganado!";
+            console.log(this.ganador);
         }
     }
 }
